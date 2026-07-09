@@ -1,0 +1,113 @@
+@BookingApi_HostAddress = http://localhost:5077
+
+### Get all books
+GET {{BookingApi_HostAddress}}/api/Books
+Accept: application/json
+
+
+### Get books with OData pagination
+GET {{BookingApi_HostAddress}}/api/Books?$skip=0&$top=20
+Accept: application/json
+
+
+### Get books filtered by kind
+GET {{BookingApi_HostAddress}}/api/Books?kind=liryka
+Accept: application/json
+
+
+### Get books filtered by genre
+GET {{BookingApi_HostAddress}}/api/Books?genre=bajka
+Accept: application/json
+
+
+### Get books filtered by epoch
+GET {{BookingApi_HostAddress}}/api/Books?epoch=romantyzm
+Accept: application/json
+
+
+### Get books with multiple filters
+GET {{BookingApi_HostAddress}}/api/Books?kind=liryka&epoch=romantyzm
+Accept: application/json
+
+
+### Get books with filters + OData sorting
+GET {{BookingApi_HostAddress}}/api/Books?kind=liryka&$orderby=Title asc
+Accept: application/json
+
+
+### Get books ordered by title ascending
+GET {{BookingApi_HostAddress}}/api/Books?$orderby=Title asc
+Accept: application/json
+
+
+### Get books ordered by title descending
+GET {{BookingApi_HostAddress}}/api/Books?$orderby=Title desc
+Accept: application/json
+
+
+### Get books with filtering + sorting + pagination
+GET {{BookingApi_HostAddress}}/api/Books?epoch=romantyzm&$orderby=Title asc&$skip=0&$top=10
+Accept: application/json
+
+
+### Get single book by slug
+GET {{BookingApi_HostAddress}}/api/Books/pan-tadeusz
+Accept: application/json
+
+
+### Get all authors
+GET {{BookingApi_HostAddress}}/api/Authors
+Accept: application/json
+
+
+### Get authors with OData pagination
+GET {{BookingApi_HostAddress}}/api/Authors?$skip=0&$top=20
+Accept: application/json
+
+
+### Get authors ordered by name ascending
+GET {{BookingApi_HostAddress}}/api/Authors?$orderby=Name asc
+Accept: application/json
+
+
+### Get authors ordered by name descending
+GET {{BookingApi_HostAddress}}/api/Authors?$orderby=Name desc
+Accept: application/json
+
+### Get books by author
+GET {{BookingApi_HostAddress}}/api/Authors/adam-mickiewicz/books
+Accept: application/json
+
+
+### Get books by author with OData pagination
+GET {{BookingApi_HostAddress}}/api/Authors/adam-mickiewicz/books?$skip=0&$top=20
+Accept: application/json
+
+
+### Get books by author ordered by title
+GET {{BookingApi_HostAddress}}/api/Authors/adam-mickiewicz/books?$orderby=Title asc
+Accept: application/json
+
+
+### Get books by author ordered by title descending
+GET {{BookingApi_HostAddress}}/api/Authors/adam-mickiewicz/books?$orderby=Title desc
+Accept: application/json
+
+
+### Get books by author and kind
+GET {{BookingApi_HostAddress}}/api/Books?author=adam-mickiewicz&kind=liryka
+Accept: application/json
+
+
+### Get books by author and kind with sorting and pagination
+GET {{BookingApi_HostAddress}}/api/Books?author=adam-mickiewicz&kind=liryka&$orderby=Title asc&$skip=0&$top=10
+Accept: application/json
+
+### Get books ordered by author ascending
+GET {{BookingApi_HostAddress}}/api/Books?$orderby=Author/Name asc
+Accept: application/json
+
+
+### Get books ordered by author descending
+GET {{BookingApi_HostAddress}}/api/Books?$orderby=Author/Name desc
+Accept: application/json
